@@ -28,6 +28,13 @@ export const projects: PortfolioProject[] = [
     technologies: ["Flutter", "Dart", "Clean Architecture", "BLoC / Cubit"],
   },
   {
+    id: "hospital-ticketing", title: "Hospital Ticketing Display Application", company: "Tidal Systems", category: "Real-time systems",
+    liveDemoUrl: "https://newqueweb.tidalsystems.net/",
+    coverImage: "/projects/hospital-ticketing/header.png", coverImageWidth: 1672, coverImageHeight: 941,
+    description: "Real-time hospital ticketing display application using SignalR, automatic reconnection, and automated wake locks for reliable operation.",
+    technologies: ["Flutter", "Dart", "SignalR", "Wake locks"],
+  },
+  {
     id: "aqar", title: "AQAR", category: "Real estate · Mobile & web", featured: true,
     coverImage: "/projects/aqar/header.png", coverImageWidth: 1774, coverImageHeight: 887,
     description: "A unified real estate mobile and web experience focused on discovering property listings, residential projects, developers, and geographic areas.",
@@ -70,12 +77,5 @@ export const projects: PortfolioProject[] = [
     coverImage: "/projects/biometric-2fa/header.png", coverImageWidth: 1145, coverImageHeight: 1374,
     description: "Administrative security solution using biometric authentication, local_auth, and QR-to-OTP cryptographic validation handshakes.",
     technologies: ["Flutter", "local_auth", "Biometric 2FA", "QR-to-OTP"],
-  },
-  {
-    id: "hospital-ticketing", title: "Hospital Ticketing Display Application", company: "Tidal Systems", category: "Real-time systems",
-    liveDemoUrl: "https://newqueweb.tidalsystems.net/",
-    coverImage: "/projects/hospital-ticketing/header.png", coverImageWidth: 1672, coverImageHeight: 941,
-    description: "Real-time hospital ticketing display application using SignalR, automatic reconnection, and automated wake locks for reliable operation.",
-    technologies: ["Flutter", "Dart", "SignalR", "Wake locks"],
   },
 ];
