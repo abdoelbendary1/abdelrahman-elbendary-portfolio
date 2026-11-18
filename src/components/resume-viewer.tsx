@@ -17,7 +17,7 @@ const sections = [
 ];
 
 /** Phrases that get the highlighter sweep when they scroll into view. */
-const highlights = ["2+ years", "7 scalable", "4 companies", "30+ modules", "30+ business modules", "60 FPS", "4 production apps", "500-1,000 active business users", "3 core modules", "2 stores"];
+const highlights = ["2+ years", "7 enterprise", "4 companies", "30+ modules", "30+ business modules", "100%", "2 apps in 2 months", "60 FPS", "4 production apps", "500-1,000 active business users", "3 core modules", "2 stores"];
 
 function Marked({ text }: { text: string }) {
   const pattern = new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).sort((a, b) => b.length - a.length).join("|")})`, "g");
@@ -130,7 +130,8 @@ export function ResumeViewer() {
             <p>{profile.location} <i>|</i> <a href={`tel:${profile.phoneHref}`}>{profile.phone}</a> <i>|</i> <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
             <p className="cv-links">
               <a href={profile.linkedin} target="_blank" rel="noreferrer">linkedin.com/in/abdelrahman-elbendary</a> <i>|</i>{" "}
-              <a href={profile.github} target="_blank" rel="noreferrer">github.com/abdoelbendary1</a>
+              <a href={profile.github} target="_blank" rel="noreferrer">github.com/abdoelbendary1</a> <i>|</i>{" "}
+              <a href="https://abdelrahman-elbendary.vercel.app">Portfolio: abdelrahman-elbendary.vercel.app</a>
             </p>
           </header>
 

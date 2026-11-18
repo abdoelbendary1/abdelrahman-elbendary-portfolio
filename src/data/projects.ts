@@ -59,7 +59,7 @@ const projectList: PortfolioProject[] = [
     coverImage: "/projects/cafe-pos/header.webp", coverImageWidth: 1672, coverImageHeight: 941,
     description: "An enterprise POS system with local-first order lifecycles, granular role-based access, and direct LAN thermal printer communication.",
     technologies: ["Flutter", "Dart", "BLoC", "Fpdart (ROP)", "Freezed", "Injectable", "GoRouter Builder", "Raw TCP/IP Sockets"],
-    contributions: ["Engineered an enterprise POS system using Clean Architecture and Railway Oriented Programming (fpdart Either) for deterministic error handling.", "Developed LAN thermal printer communication using asynchronous raw TCP/IP socket streams and ESC/POS byte-protocol serialization.", "Built a local-first transactional state machine managing atomic multi-stage order lifecycles with granular Role-Based Access Control (RBAC)."],
+    contributions: ["Engineered an enterprise POS system with 3 core subsystems (printing, order management, access control) using Clean Architecture and Railway Oriented Programming (fpdart Either) for deterministic error handling.", "Developed LAN thermal printer communication using asynchronous raw TCP/IP socket streams and ESC/POS byte-protocol serialization.", "Built a local-first transactional state machine managing atomic multi-stage order lifecycles with granular Role-Based Access Control (RBAC)."],
   },
   {
     id: "tidal-activator", title: "TidalActivator", company: "Tidal Systems", category: "Licensing & activation",

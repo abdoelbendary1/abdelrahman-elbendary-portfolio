@@ -1,8 +1,8 @@
 export const profile = {
   name: "Abdelrahman Elbendary",
-  title: "Mid-Level Flutter & Mobile Software Engineer",
+  title: "Flutter Developer | Mobile Software Engineer (iOS & Android)",
   location: "Cairo, Egypt",
-  phone: "(+20) 010 6432 6250",
+  phone: "+20 106 432 6250",
   phoneHref: "+201064326250",
   email: "abdelrahman.elbendary0@gmail.com",
   linkedin: "https://www.linkedin.com/in/abdelrahman-elbendary/",
@@ -12,5 +12,5 @@ export const profile = {
   resumeDocxUrl: "/resume.docx",
   resumeFileName: "Abdelrahman_Elbendary_Resume_Mobile_Developer",
   introduction: "I build reliable mobile experiences. From everyday habits to complex enterprise systems, I turn thoughtful architecture into apps people can depend on.",
-  summary: "Mid-Level Flutter & Mobile Software Engineer with 2+ years of production experience delivering 7 scalable enterprise iOS and Android applications across 4 companies using Flutter and Dart. Proficient in Clean Architecture, BLoC, Riverpod, FinTech payment workflows, and automated testing (Unit & Widget tests). Proven track record of architecting secure biometric 2FA systems, refactoring legacy codebases across 30+ modules, eliminating memory leaks for 60 FPS performance, and managing end-to-end releases on the Apple App Store and Google Play Store. Strong problem-solver and team collaborator with excellent communication skills, ownership mindset, and adaptability in fast-paced, cross-functional teams.",
+  summary: "Flutter Developer and Mobile Software Engineer with 2+ years of production experience building and releasing 7 enterprise iOS and Android applications across 4 companies using Flutter and Dart. Skilled in cross-platform mobile development, Clean Architecture, BLoC/Cubit, Riverpod, REST API integration, Firebase, CI/CD with GitHub Actions, unit and widget testing, and Agile/Scrum delivery. Delivered FinTech payment workflows (KNET, ZATCA e-invoicing), biometric 2FA and OAuth2 security, a legacy-to-Clean-Architecture refactor across 30+ modules, and memory-leak fixes for 60 FPS performance. Managed end-to-end releases on the Apple App Store and Google Play Store in collaborative, cross-functional teams.",
 };
