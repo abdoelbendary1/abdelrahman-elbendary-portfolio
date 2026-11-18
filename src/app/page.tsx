@@ -11,6 +11,7 @@ import { Navigation } from "@/components/navigation";
 import { PhoneMock } from "@/components/phone-mock";
 import { ProjectGallery } from "@/components/project-gallery";
 import { CopyEmail } from "@/components/copy-email";
+import { ResumeViewer } from "@/components/resume-viewer";
 
 function SectionHead({ index, label, children, note }: { index: string; label: string; children: React.ReactNode; note?: string }) {
   return (
@@ -25,7 +26,7 @@ function SectionHead({ index, label, children, note }: { index: string; label: s
 const facts = [
   { value: "2+", label: "years shipping to production" },
   { value: "30+", label: "modules rearchitected to BLoC" },
-  { value: `${projects.length}`, label: "apps & systems in this portfolio" },
+  { value: "7", label: "production apps across 4 companies" },
   { value: "2", label: "stores — App Store & Google Play" },
 ];
 
@@ -45,7 +46,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="btn btn-solid" href="#work">See the work <ArrowDown size={17} aria-hidden="true" /></a>
             {resumeAvailable
-              ? <a className="btn btn-line" href={profile.resumeUrl!} download>Download CV <Download size={16} aria-hidden="true" /></a>
+              ? <a className="btn btn-line" href={profile.resumeUrl!} download={`${profile.resumeFileName}.pdf`}>Download CV <Download size={16} aria-hidden="true" /></a>
               : <a className="btn btn-line" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={16} aria-hidden="true" /></a>}
           </div>
           <ul className="hero-platforms" aria-label="Platforms and stack">
@@ -125,8 +126,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="resume" className="section resume-section">
+        <div className="shell">
+          <SectionHead index="05" label="Resume" note="Read it right here — or take it with you as a PDF or Word file.">
+            The whole story, <em>one page.</em>
+          </SectionHead>
+          <ResumeViewer />
+        </div>
+      </section>
+
       <section id="contact" className="section shell contact">
-        <p className="sec-label"><span>05</span>Contact</p>
+        <p className="sec-label"><span>06</span>Contact</p>
         <h2>Have an app that needs to <em>ship?</em></h2>
         <p className="contact-lede">Hiring for a Flutter role, or planning a mobile product? Send a note and let&rsquo;s talk about it.</p>
         <div className="contact-mail">

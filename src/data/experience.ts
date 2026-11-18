@@ -6,13 +6,13 @@ export const experience = [
       "Engineered a high-throughput hospital ticketing display app using SignalR with self-healing auto-reconnection and automated wake locks for real-time operation.",
       "Developed an administrative biometric 2FA security system utilizing local_auth and zero-touch QR-to-OTP cryptographic validation handshakes.",
       "Built the TidalActivator licensing app with deep linking (App/Universal Links) and OAuth2 Bearer tokens for one-click license activation.",
-      "Configured automated release pipelines, code signing, and Firebase Crashlytics telemetry for production deployments on Google Play Console and Apple App Store.",
+      "Delivered 4 production apps end to end: configured automated release pipelines, code signing, and Firebase Crashlytics telemetry for deployments on both Google Play Console and Apple App Store (2 stores).",
     ],
   },
   {
     company: "Code Icons", role: "Flutter Developer", period: "Jun 2024 – Jan 2025", location: "Cairo, Egypt",
     achievements: [
-      "Architected a multi-tenant enterprise ERP client (Finance, HR Self-Service, Inventory) supporting 500–1,000 active business users.",
+      "Architected a multi-tenant enterprise ERP client with 3 core modules (Finance, HR Self-Service, Inventory) supporting 500–1,000 active business users.",
       "Integrated Saudi Arabian ZATCA e-invoicing compliance logic, handling real-time tax calculation and cryptographic QR code generation.",
       "Eliminated setState-after-dispose crashes and memory leaks by building a dependency injection graph with GetIt/Injectable and enforcing mounted lifecycle guards.",
       "Implemented offline-first persistence and optimistic UI caching using Hive and encrypted SharedPreferences.",

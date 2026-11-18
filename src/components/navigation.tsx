@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { profile } from "@/data/profile";
 
 const items = [
   { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
   { id: "toolkit", label: "Toolkit" },
   { id: "about", label: "About" },
+  { id: "resume", label: "Resume" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -42,7 +45,10 @@ export function Navigation() {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}>
       <div className="shell nav-row">
         <a className="mark" href="#top" onClick={() => setOpen(false)} aria-label="Abdelrahman Elbendary, back to top">
-          <span className="mark-glyph" aria-hidden="true">ae</span>
+          <span className="mark-pair" aria-hidden="true">
+            <span className="mark-glyph">ae</span>
+            <Image className="mark-avatar" src="/avatar.webp" alt="" width={128} height={128} preload />
+          </span>
           <span className="mark-name">Abdelrahman Elbendary</span>
         </a>
         <nav id="main-nav" aria-label="Main">
@@ -52,6 +58,10 @@ export function Navigation() {
             </a>
           ))}
         </nav>
+        <div className="nav-social">
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile (opens in a new tab)" title="LinkedIn"><Linkedin size={17} aria-hidden="true" /></a>
+          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile (opens in a new tab)" title="GitHub"><Github size={17} aria-hidden="true" /></a>
+        </div>
         <a className="nav-cta" href="#contact">Get in touch <ArrowUpRight size={15} aria-hidden="true" /></a>
         <button className="menu-btn" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-nav">
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>

@@ -1,3 +1,5 @@
+import { screens, type AppScreen } from "@/data/screens";
+
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -11,14 +13,14 @@ export interface PortfolioProject {
   coverImage?: string;
   coverImageWidth?: number;
   coverImageHeight?: number;
-  screenshots?: string[];
+  screens?: AppScreen[];
   githubUrl?: string;
   googlePlayUrl?: string;
   appStoreUrl?: string;
   liveDemoUrl?: string;
 }
 
-export const projects: PortfolioProject[] = [
+const projectList: PortfolioProject[] = [
   {
     id: "enterprise-hcm", title: "Enterprise HCM & ERP Mobile Application", company: "Tidal Systems", category: "Enterprise mobile",
     googlePlayUrl: "https://play.google.com/store/apps/details?id=com.tidal.tidal_ess&pcampaignid=web_share",
@@ -79,3 +81,5 @@ export const projects: PortfolioProject[] = [
     technologies: ["Flutter", "local_auth", "Biometric 2FA", "QR-to-OTP"],
   },
 ];
+
+export const projects: PortfolioProject[] = projectList.map((p) => ({ ...p, screens: screens[p.id] ?? [] }));
