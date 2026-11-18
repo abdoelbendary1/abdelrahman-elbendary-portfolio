@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat, Open_Sans, Roboto } from "next/font/google";
+import { Instrument_Serif, JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"], display: "swap", variable: "--font-heading" });
-const openSans = Open_Sans({ subsets: ["latin"], display: "swap", variable: "--font-body" });
-const roboto = Roboto({ subsets: ["latin"], display: "swap", variable: "--font-ui" });
+const sans = Schibsted_Grotesk({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], display: "swap", variable: "--font-serif" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], display: "swap", variable: "--font-mono" });
 
-const title = "Abdelrahman Elbendary | Flutter & Mobile Software Engineer";
-const description = "Cairo-based Flutter engineer with 2+ years of production experience. Explore mobile and web projects, enterprise architecture, technical skills, and professional experience.";
+const title = "Abdelrahman Elbendary — Flutter & Mobile Engineer";
+const description = "Cairo-based Flutter engineer shipping iOS and Android apps: enterprise HCM, real-time queue displays, biometric 2FA, POS systems and consumer products.";
 export const metadata: Metadata = {
   title, description,
   authors: [{ name: "Abdelrahman Elbendary" }],
@@ -15,8 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title, description, type: "website", locale: "en_US", siteName: "Abdelrahman Elbendary" },
   twitter: { card: "summary", title, description },
 };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fafbf9" };
+export const viewport: Viewport = {
+  width: "device-width", initialScale: 1,
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#efeae1" }, { media: "(prefers-color-scheme: dark)", color: "#141210" }],
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${roboto.variable}`}><body>{children}</body></html>;
+  return <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable}`}><body>{children}</body></html>;
 }

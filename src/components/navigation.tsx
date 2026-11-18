@@ -1,34 +1,63 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-const items = [{ id: "about", label: "About" }, { id: "experience", label: "Experience" }, { id: "skills", label: "Skills" }, { id: "projects", label: "Projects" }, { id: "contact", label: "Contact" }];
+const items = [
+  { id: "work", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "toolkit", label: "Toolkit" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
-    }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
-    items.forEach(({ id }) => { const element = document.getElementById(id); if (element) observer.observe(element); });
-    return () => observer.disconnect();
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    items.forEach(({ id }) => { const el = document.getElementById(id); if (el) observer.observe(el); });
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { observer.disconnect(); window.removeEventListener("scroll", onScroll); };
   }, []);
+
   useEffect(() => {
+    document.documentElement.classList.toggle("menu-open", open);
     if (!open) return;
-    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const wide = window.matchMedia("(min-width: 901px)");
+    const onWide = () => { if (wide.matches) setOpen(false); };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    wide.addEventListener("change", onWide);
+    return () => { window.removeEventListener("keydown", onKey); wide.removeEventListener("change", onWide); document.documentElement.classList.remove("menu-open"); };
   }, [open]);
-  return <header className="site-header">
-    <div className="nav-wrap">
-      <a className="wordmark" href="#" aria-label="Abdelrahman Elbendary, back to top">ae<span>.</span></a>
-      <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation" aria-label={open ? "Close navigation" : "Open navigation"}>{open ? <X size={22} /> : <Menu size={22} />}</button>
-      <nav id="main-navigation" className={open ? "is-open" : ""} aria-label="Main navigation">
-        {items.map(({ id, label }) => <a key={id} href={`#${id}`} aria-current={active === id ? "location" : undefined} onClick={() => setOpen(false)}>{label}</a>)}
-      </nav>
-      <a className="nav-contact" href="#contact">Let’s talk <ArrowUpRight size={16} /></a>
-    </div>
-  </header>;
+
+  return (
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}>
+      <div className="shell nav-row">
+        <a className="mark" href="#top" onClick={() => setOpen(false)} aria-label="Abdelrahman Elbendary, back to top">
+          <span className="mark-glyph" aria-hidden="true">ae</span>
+          <span className="mark-name">Abdelrahman Elbendary</span>
+        </a>
+        <nav id="main-nav" aria-label="Main">
+          {items.map(({ id, label }, i) => (
+            <a key={id} href={`#${id}`} aria-current={active === id ? "location" : undefined} onClick={() => setOpen(false)}>
+              <span className="nav-num" aria-hidden="true">0{i + 1}</span>{label}
+            </a>
+          ))}
+        </nav>
+        <a className="nav-cta" href="#contact">Get in touch <ArrowUpRight size={15} aria-hidden="true" /></a>
+        <button className="menu-btn" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-nav">
+          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <span className="menu-lines" aria-hidden="true" />
+        </button>
+      </div>
+    </header>
+  );
 }
