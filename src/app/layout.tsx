@@ -9,11 +9,13 @@ const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], displa
 const title = "Abdelrahman Elbendary — Flutter & Mobile Engineer";
 const description = "Cairo-based Flutter engineer shipping iOS and Android apps: enterprise HCM, real-time queue displays, biometric 2FA, POS systems and consumer products.";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abdelrahman-elbendary.vercel.app"),
   title, description,
+  alternates: { canonical: "/" },
   authors: [{ name: "Abdelrahman Elbendary" }],
   keywords: ["Flutter Developer", "Mobile Software Engineer", "Dart", "Clean Architecture", "Cairo", "Abdelrahman Elbendary"],
-  openGraph: { title, description, type: "website", locale: "en_US", siteName: "Abdelrahman Elbendary" },
-  twitter: { card: "summary", title, description },
+  openGraph: { title, description, url: "/", type: "website", locale: "en_US", siteName: "Abdelrahman Elbendary" },
+  twitter: { card: "summary_large_image", title, description },
 };
 export const viewport: Viewport = {
   width: "device-width", initialScale: 1,

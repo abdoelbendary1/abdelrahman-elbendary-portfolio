@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@500;600&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #efeae1; color: #191713; font-family: "Schibsted Grotesk", sans-serif; position: relative; }
+  .left { position: absolute; left: 72px; top: 64px; bottom: 60px; width: 600px; display: flex; flex-direction: column; }
+  .mark { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
+  .glyph { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #191713; color: #efeae1; font-family: "Instrument Serif", serif; font-style: italic; font-size: 30px; padding-bottom: 4px; }
+  .avatar { width: 52px; height: 52px; border-radius: 50%; margin-left: -4px; box-shadow: 0 0 0 1px #d3cbbd; object-fit: cover; }
+  h1 { margin-top: 54px; font-size: 76px; line-height: .98; letter-spacing: -.045em; font-weight: 600; }
+  h1 em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #b13512; font-size: 1.08em; letter-spacing: -.02em; }
+  .role { margin-top: 26px; font-size: 24px; color: #3d3932; }
+  .url { margin-top: auto; display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; padding: 12px 22px 12px 18px; border-radius: 999px; background: #cf421c; color: #fff8f2; font-family: "JetBrains Mono", monospace; font-size: 21px; font-weight: 500; }
+  .url i { width: 10px; height: 10px; border-radius: 50%; background: #fff8f2; }
+  .mat { position: absolute; right: -60px; top: 70px; width: 560px; height: 600px; border-radius: 48px; background: #e4ddd0; transform: rotate(-5deg); }
+  .phones { position: absolute; right: 30px; top: 0; width: 520px; height: 630px; }
+  .phone { position: absolute; width: 214px; padding: 8px; border-radius: 34px; background: #0f0e0c; box-shadow: inset 0 0 0 1px #3d3933, 0 30px 50px -20px rgba(25,23,19,.55); }
+  .phone .screen { aspect-ratio: 9 / 19.5; border-radius: 27px; overflow: hidden; background: #fff; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .p1 { left: 10px; top: 120px; transform: rotate(-9deg) scale(.9); }
+  .p3 { right: 0; top: 120px; transform: rotate(9deg) scale(.9); }
+  .p2 { left: 153px; top: 58px; z-index: 2; width: 226px; }
+</style>
+</head>
+<body>
+  <div class="mat"></div>
+  <div class="left">
+    <div class="mark"><span class="glyph">ae</span><img class="avatar" src="AVATAR"><span>Abdelrahman Elbendary</span></div>
+    <h1>Mobile apps people <em>actually open</em> every day.</h1>
+    <p class="role">Flutter &amp; Mobile Engineer · iOS + Android · Cairo</p>
+    <span class="url"><i></i>abdelrahman-elbendary.vercel.app</span>
+  </div>
+  <div class="phones">
+    <div class="phone p1"><div class="screen"><img src="S1"></div></div>
+    <div class="phone p3"><div class="screen"><img src="S3"></div></div>
+    <div class="phone p2"><div class="screen"><img src="S2"></div></div>
+  </div>
+</body>
+</html>
