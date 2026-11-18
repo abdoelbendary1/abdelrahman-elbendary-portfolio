@@ -70,7 +70,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
 .mark { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; letter-spacing: -.01em; }
 .mark-glyph { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--ink); color: var(--bg); font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1; padding-bottom: 3px; }
 .mark-pair { display: flex; align-items: center; }
-.mark-avatar { width: 36px; height: 36px; margin-left: -8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2.5px var(--bg); transition: transform .3s var(--ease); }
+.mark-avatar { width: 36px; height: 36px; margin-left: 6px; border-radius: 50%; object-fit: cover; object-position: center; box-shadow: 0 0 0 1px var(--line); transition: transform .3s var(--ease); }
 .mark:hover .mark-avatar { transform: translateX(3px) rotate(4deg); }
 .site-header nav { display: flex; gap: 4px; margin-left: auto; }
 .nav-social { display: flex; gap: 6px; margin-left: -16px; }

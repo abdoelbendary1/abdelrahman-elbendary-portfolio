@@ -40,7 +40,6 @@ export default function Home() {
     <main id="main">
       <section id="top" className="hero shell" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="hero-status"><span className="dot" aria-hidden="true" />Flutter engineer at {experience[0].company} · {profile.location}</p>
           <h1 id="hero-title">Mobile apps people <em>actually open</em> every day.</h1>
           <p className="hero-lede">{profile.introduction}</p>
           <div className="hero-actions">

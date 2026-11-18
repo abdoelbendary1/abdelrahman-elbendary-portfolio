@@ -47,7 +47,7 @@ export function Navigation() {
         <a className="mark" href="#top" onClick={() => setOpen(false)} aria-label="Abdelrahman Elbendary, back to top">
           <span className="mark-pair" aria-hidden="true">
             <span className="mark-glyph">ae</span>
-            <Image className="mark-avatar" src="/avatar.webp" alt="" width={128} height={128} preload />
+            <Image className="mark-avatar" src="/avatar.webp" alt="" width={160} height={160} preload />
           </span>
           <span className="mark-name">Abdelrahman Elbendary</span>
         </a>
